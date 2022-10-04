@@ -1,13 +1,24 @@
+from msilib.schema import Condition
 import string
 
 from direccion import direccion
 
 
-def abrir(ruta):
+print("Hola usuario, a continuacion le mostrare varias opciones las cuales podra hacer en la aplicacion")
+print("pulse 1: para mostrar la lista de direcciones guardadas")
+print("pulse 2: para guardar una direccion especifica")
+print("pulse 3: para ingresar la direccion en la que esta y a la cual se dirige")
+print("pulse 4: para salir")
+
+condicion = int(input())
+if condicion  == 1:
+    
+ def abrir(ruta):
     archivo = open(ruta)
     texto = archivo.read()
     archivo.close()
     return texto
+
 
 def obtener_direciones(archivo):
     lista_direcciones = []
@@ -34,5 +45,8 @@ def main():
  archivo = abrir(ruta)
  lista_direciones = obtener_direciones(archivo)
  print (lista_direciones)
+ 
+if condicion == 4:
+    quit()
  
 main()
